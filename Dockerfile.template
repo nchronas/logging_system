@@ -1,0 +1,24 @@
+FROM resin/%%RESIN_MACHINE_NAME%%-node:0.10.38
+
+ENV INITSYSTEM on
+
+RUN apt-get -q update && apt-get install -yq --no-install-recommends \
+	logrotate \
+	dropbear \
+	&& rm -rf /var/lib/apt/lists/*
+
+COPY logrotate.conf /etc/
+
+COPY logs.service /etc/systemd/system/
+COPY logs.timer /etc/systemd/system/
+
+COPY . /usr/src/app
+WORKDIR /usr/src/app
+
+RUN ls
+
+RUN npm install --unsafe-perm --production -s && npm cache clean 
+
+RUN systemctl enable logs.timer
+
+CMD ["bash", "/usr/src/app/start.sh"]

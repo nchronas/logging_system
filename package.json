@@ -1,0 +1,18 @@
+{
+  "name": "logging-system",
+  "description": "Use of bunyan + logrotate + systemd timers for a custom logging system in a coffeescript application",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "version": "0.0.1",
+  "dependencies": {
+    "coffee-script": "1.9.2",
+    "express": "4.12.x",
+    "bunyan": "1.5.1"
+  },
+  "author": "Nikitas <nchronas@resin.io>",
+  "engines": {
+    "node": "0.10.38"
+  }
+}
