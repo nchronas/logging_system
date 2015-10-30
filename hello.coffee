@@ -9,4 +9,4 @@ out = () ->
 	log.info "well nothing happened"
 	log.debug "this should only appear in the file"
 
-setInterval out, 10000
+setInterval out, 60000

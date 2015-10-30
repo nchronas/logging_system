@@ -3,4 +3,4 @@ Description=Start logrotate
 
 [Service]
 Type=oneshot
-ExecStart=/usr/sbin/logrotate -v /etc/logrotate.conf -s /data/state
+ExecStart=/usr/sbin/logrotate -v /etc/logrotate.conf -s /data/status
